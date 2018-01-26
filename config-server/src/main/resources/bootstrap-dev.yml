@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ecommerce-server-configuration
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///C:/compartido/BCK/dev/config-server-app
+#          searchPaths: src/main/resources/repository/{application}/${app.environment}
+          searchPaths: src/main/resources/repository/${app.environment}/{application}
+          label: master
+server:
+ port: 8888
+
+logging:
+  level:
+    ROOT : INFO
+
+management:
+  security:
+    enabled : false    

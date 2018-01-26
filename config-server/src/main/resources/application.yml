@@ -1,0 +1,9 @@
+endpoints:
+  info:
+    enabled: true
+info:
+  app:
+    version: "@project.version@"
+    artifact: "@project.artifactId@"
+    group: "@project.groupId@"
+    lastBuildDate: "@timestamp@"
