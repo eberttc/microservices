@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: turbine
+        
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    service-url:
+      defaultZone: http://localhost:8882/eureka/
+
+logging:
+  level:
+    ROOT: DEBUG
+                    
+server:
+  port: 8885
+  
+turbine:
+  aggregator:
+    clusterConfig: CREDITS
+  app-config: credits,client
+  InstanceMonitor:
+    eventStream:
+      skipLineLogic:
+        enabled: false
+
+
+endpoints:
+  info:
+    enabled: true          
+#http://localhost:8885/turbine.stream?cluster=CREDITS

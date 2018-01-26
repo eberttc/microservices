@@ -1,0 +1,60 @@
+# Spring properties
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  mvc:
+    dispatch-options-request: true
+
+server:
+  port: 8881
+
+eureka:
+  client:
+    eureka-connection-idle-timeout-seconds: 60
+    serviceUrl:
+      defaultZone: http://localhost:8882/eureka/
+  healthcheck:
+     enabled: true
+     
+logging:
+  level:
+    ROOT: DEBUG
+         
+management:
+  add-application-context-header: false
+  security:
+    enabled: false
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+      circuitBreaker:
+        enabled: true
+  threadpool:
+    default:
+      coreSize: 10000
+  stream:
+    endpoint: enabled
+    
+endpoints:
+  info:
+    enabled: true
+#  restart:
+#    enabled: true
+    
+info:
+  app:
+    version: "@project.version@"
+    artifact: "@project.artifactId@"
+    group: "@project.groupId@"
+    lastBuildDate: "@timestamp@"

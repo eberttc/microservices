@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: credits
+  profiles:
+    active: application,services
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enabled: true
+#      discovery:
+#        enabled: true
+    circuit :
+      breaker: enabled
