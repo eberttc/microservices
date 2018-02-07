@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: application
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: dashboard
+
+#logging:
+#  config: ${ecommerce.app.home.config}/log4j2-spring.xml
